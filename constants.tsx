@@ -29,4 +29,59 @@ export const SKILL_COURSES = [
         name: 'Organic Farming',
         eligibility: '10th Pass',
         description: 'Learn sustainable and organic farming techniques to improve crop yield and soil health. This course covers everything from composting to pest control.',
-        icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.158 2.05A1 1 0 0014.22 3.5l.89 3.553a1 1 0 01-.623 1.18l-3.955 1.582a1 1 0 00-.623 1.18l.89 3.554a1 1 0 01-.623 1.18L6.4 17.5a1 1 0 00-.938 1.45l2.05 4.102A1 1 0 008.938 24h6.125a1 1 0 00.938-.948l2.05-4.1
+        icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+    },
+    {
+        name: 'Yoga and Meditation',
+        eligibility: 'Anyone',
+        description: 'Discover the mental and physical benefits of yoga and meditation. This course is suitable for all levels, from beginners to advanced practitioners.',
+        icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.25278C12 6.25278 10.6922 3.75 8.4375 3.75C6.18281 3.75 4.5 5.43281 4.5 7.6875C4.5 11.3437 8.25 14.25 12 17.25C15.75 14.25 19.5 11.3437 19.5 7.6875C19.5 5.43281 17.8172 3.75 15.5625 3.75C13.3078 3.75 12 6.25278 12 6.25278Z" /></svg>
+    },
+    {
+        name: 'Financial Literacy',
+        eligibility: '12th Pass',
+        description: 'Gain control over your finances with this comprehensive course on budgeting, saving, investing, and debt management.',
+        icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" /><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" /></svg>
+    },
+    {
+        name: 'Digital Marketing',
+        eligibility: 'Graduate',
+        description: 'Master the art of online marketing, including SEO, social media, and content strategy, to boost your business or career.',
+        icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+    }
+];
+
+export const EBOOK_CATEGORIES = [
+  { name: 'All', value: 'all' },
+  { name: 'Fiction', value: 'fiction' },
+  { name: 'Non-Fiction', value: 'non-fiction' },
+  { name: 'Science', value: 'science' },
+  { name: 'History', value: 'history' },
+  { name: 'Technology', value: 'technology' },
+];
+
+export const EBOOKS = [
+  {
+    title: 'The Digital Fortress',
+    author: 'Dan Brown',
+    category: 'fiction',
+    cover: 'https://covers.openlibrary.org/b/id/8264783-L.jpg',
+    url: 'https://openlibrary.org/works/OL48389W/Digital_Fortress'
+  },
+  {
+    title: 'Cosmos',
+    author: 'Carl Sagan',
+    category: 'science',
+    cover: 'https://covers.openlibrary.org/b/id/8264783-L.jpg',
+    url: 'https://openlibrary.org/works/OL48389W/Digital_Fortress'
+  },
+  {
+    title: 'Sapiens: A Brief History of Humankind',
+    author: 'Yuval Noah Harari',
+    category: 'history',
+    cover: 'https://covers.openlibrary.org/b/id/8264783-L.jpg',
+    url: 'https://openlibrary.org/works/OL48389W/Digital_Fortress'
+  }
+];
+
+export const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY";

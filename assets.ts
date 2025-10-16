@@ -1,1 +1,1 @@
-full contents of assets.ts
+// This file is available for asset exports.

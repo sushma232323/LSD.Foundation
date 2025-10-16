@@ -7,6 +7,7 @@ const TreeMissionPage: React.FC = () => {
     const [uploadedImage, setUploadedImage] = useState<string | null>(null);
     const [coins, setCoins] = useState(0);
     const [showConfetti, setShowConfetti] = useState(false);
+    const [treeCount, setTreeCount] = useState(1000000);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,6 +17,7 @@ const TreeMissionPage: React.FC = () => {
             reader.onloadend = () => {
                 setUploadedImage(reader.result as string);
                 setCoins(5);
+                setTreeCount(prevCount => prevCount + 1); // Increment tree count
                 setShowConfetti(true);
                 setTimeout(() => setShowConfetti(false), 3000); // Confetti effect for 3 seconds
             };
@@ -39,7 +41,15 @@ const TreeMissionPage: React.FC = () => {
                 upload a photo, and earn LSD coins as a token of our gratitude.
             </p>
 
-            <Card className="mt-12 p-8">
+            <Card className="my-8 p-6 bg-emerald-50 border border-emerald-200">
+                <h2 className="text-xl font-bold text-emerald-800 mb-2">Total Trees Planted by Our Community</h2>
+                <div className="text-5xl font-extrabold text-emerald-600 animate-number-bump" key={treeCount}>
+                    {treeCount.toLocaleString()}
+                </div>
+                <p className="text-emerald-700 mt-1">You're helping us grow a greener world!</p>
+            </Card>
+
+            <Card className="p-8">
                 {uploadedImage ? (
                     <div className="animate-fadeInUp">
                         <h2 className="text-2xl font-bold text-emerald-700">Thank You for Your Contribution!</h2>
@@ -67,6 +77,16 @@ const TreeMissionPage: React.FC = () => {
                     </div>
                 )}
             </Card>
+            <style>{`
+                @keyframes number-bump {
+                  0% { transform: scale(1); }
+                  50% { transform: scale(1.05); }
+                  100% { transform: scale(1); }
+                }
+                .animate-number-bump {
+                  animation: number-bump 0.5s ease-out;
+                }
+            `}</style>
         </div>
     );
 };

@@ -14,6 +14,8 @@ export interface SkillCourse {
   eligibility: string;
   description: string;
   icon: React.ReactNode;
+  detailedDescription: string;
+  careerPaths: string[];
 }
 
 export interface WellnessTip {
@@ -22,7 +24,8 @@ export interface WellnessTip {
   icon: React.ReactNode;
 }
 
-export type EBookCategory = 'Health & Wellness' | 'Spirituality & Philosophy' | 'Medical Guides';
+// FIX: Expanded EBookCategory to include all categories used in the application.
+export type EBookCategory = 'Health & Wellness' | 'Spirituality & Philosophy' | 'Medical Guides' | 'Inspirational Biographies' | 'Skill Training Manuals' | 'Environmental Awareness';
 
 export interface EBook {
     id: number;
@@ -30,4 +33,7 @@ export interface EBook {
     author: string;
     category: EBookCategory;
     coverUrl: string;
+    synopsis: string;
+    publicationDate: string;
+    pageCount: number;
 }

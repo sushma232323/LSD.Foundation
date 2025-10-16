@@ -1,9 +1,12 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { SKILL_COURSES } from '../constants';
 import Card from './common/Card';
+import Modal from './common/Modal';
+import type { SkillCourse } from '../types';
 
 const SkillsPage: React.FC = () => {
+    const [selectedCourse, setSelectedCourse] = useState<SkillCourse | null>(null);
+
     return (
         <div className="animate-fadeIn">
             <div className="text-center mb-12">
@@ -27,13 +30,41 @@ const SkillsPage: React.FC = () => {
                             <p className="text-gray-600 flex-grow">{course.description}</p>
                         </div>
                         <div className="p-6 bg-gray-50 rounded-b-lg mt-auto">
-                            <button className="w-full bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-emerald-700 transition-colors duration-300">
-                                Enroll Now
+                            <button
+                                onClick={() => setSelectedCourse(course)}
+                                className="w-full bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-emerald-700 transition-colors duration-300">
+                                Learn More
                             </button>
                         </div>
                     </Card>
                 ))}
             </div>
+
+            {selectedCourse && (
+                <Modal
+                    isOpen={!!selectedCourse}
+                    onClose={() => setSelectedCourse(null)}
+                    title={selectedCourse.name}
+                >
+                    <div className="space-y-4">
+                        <div>
+                            <h3 className="font-bold text-lg text-gray-800 mb-2">Course Details</h3>
+                            <p className="text-gray-600">{selectedCourse.detailedDescription}</p>
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-lg text-gray-800 mb-2">Potential Career Paths</h3>
+                            <ul className="list-disc list-inside space-y-1 text-gray-600">
+                                {selectedCourse.careerPaths.map(path => <li key={path}>{path}</li>)}
+                            </ul>
+                        </div>
+                        <div className="pt-4 text-center">
+                             <button className="w-full sm:w-auto bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-emerald-700 transition-colors duration-300">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </Modal>
+            )}
         </div>
     );
 };
